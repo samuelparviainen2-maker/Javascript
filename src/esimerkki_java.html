@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Esimerkki javascript</title>
+</head>
+
+<body>
+    <h1 id="otsikko"></h1>
+    <p id="teksti"></p>
+    <input type="text" id="nimi">
+    <button id="tervehdi">Tervehdi</button>
+    <button id="vari">Vaihda väriä</button>
+    <button id="lisaa">Lisää tekstiä</button>
+    <script>
+        const otsikko = document.querySelector("#otsikko");
+        const teksti = document.querySelector("#teksti");
+        document.querySelector("#tervehdi").addEventListener("click", function () {
+            const nimi = document.querySelector("#nimi").value;
+            if (nimi == "") {
+
+                teksti.textContent = "Syötä nimesi";
+            }
+            else {
+                teksti.textContent = "Tervehdys " + nimi + "!";
+            }
+        });
+        document.querySelector("#vari").addEventListener("click", function () {
+
+            otsikko.style.color = "blue";
+            otsikko.style.backgroundcolor = "yellow";
+        });
+        document.querySelector("lisaa").addEventListener("click", function () {
+
+            const uusi = document.createElement("p");
+            uusi.textContent = "Uusi elementti";
+            document.body.appendChild(uusi);
+        });
+        document.addEventListener("keydown", function (e) {
+
+            if (e.key === "enter") {
+
+                const nimi = document.querySelector("#nimi").value;
+                if (nimi == "") {
+
+                    teksti.textContent = "Syötä nimesi";
+                }
+                else {
+                    teksti.textContent = "Tervehdys " + nimi + "!";
+                }
+            }
+            else if (e.key === "b") {
+                otsikko.style.color = "blue";
+            }
+            else if (e.key === "y") {
+                otsikko.style.backgroundcolor = "yellow";
+            }
+            else if (e.key === "l") {
+                const uusi = document.createElement("p");
+                uusi.textContent = "Uusi elementti";
+                document.body.appendChild(uusi);
+            }
+
+
+        });
+
+    </script>
+</body>
+
+</html>

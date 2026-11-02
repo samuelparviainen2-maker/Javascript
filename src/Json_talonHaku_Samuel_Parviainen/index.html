@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Talon haku</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+</head>
+
+<body>
+
+    <div>
+        Talohaku.fi
+    </div>
+
+    <div>
+        <div id="haku">
+            <input type="search" id="katu" placeholder="Katunimi">
+            <label for="makuhuone">Makuuhuoneita:</label>
+            <input type="number" id="makuhuone" step="1">
+            <label for="kylpyhuone">Kylpyhuoneita:</label>
+            <input type="number" id="kylpyhuone" step="1">
+            <button onclick="haku()">Hae</button>
+        </div>
+
+        <div id="kodit">
+        </div>
+        <script src="kodinhaku.js"></script>
+    </div>
+</body>
+
+</html>

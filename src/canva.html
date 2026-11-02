@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Canvas</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+</head>
+
+<body>
+    <h1>Liikuta neliötä nuolilla</h1>
+
+    <canvas id="peli" width="500px" height="500px" style="background-color: black;"></canvas>
+
+    <script>
+
+        const peli = document.querySelector("#peli");
+        const ctx = peli.getContext("2d");
+
+        let x = 100;
+        let y = 100;
+
+        function piirra() {
+
+            ctx.clearRect(0, 0, peli.width, peli.height);
+            ctx.fillStyle = "red";
+            ctx.fillRect(x, y, 50, 50);
+
+
+        }
+        piirra();
+
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "ArrowDown") {
+                y += 50;
+            }
+            else if (e.key === "ArrowUp") {
+                y -= 50;
+            }
+            else if (e.key === "ArrowLeft") {
+                x -= 50;
+            }
+            else if (e.key === "ArrowRight") {
+                x += 50;
+            }
+            piirra();
+        })
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
